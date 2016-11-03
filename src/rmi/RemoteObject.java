@@ -214,7 +214,6 @@ public class RemoteObject extends UnicastRemoteObject implements RemoteInterface
 		
 		hbtDAO.guardar(pedido);
 	}
-	@Override
 	public void altaCliente(ClienteDTO clienteDto) throws RemoteException {
 		Cliente cliente=new Cliente();
 		cliente=ClienteToEntity(clienteDto);
