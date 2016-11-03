@@ -22,6 +22,11 @@ public class MainServer extends RmiStarter {
 			LocateRegistry.createRegistry(1099);
 			Naming.rebind("remoteInterfaceCliente", remoteObjectCliente);
 			System.out.println("Fijado en remoteInterfaceCliente");
+			
+			RemoteObjectProveedor remoteObjectProveedor = new RemoteObjectProveedor();
+//			LocateRegistry.createRegistry(1098);
+			Naming.rebind("remoteInterfaceProveedor", remoteObjectProveedor);
+			System.out.println("Fijado en remoteInterfaceProveedor");
 
 		} catch (Exception e) {
 
