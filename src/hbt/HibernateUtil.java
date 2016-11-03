@@ -5,14 +5,34 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 
-import entities.*;
+import entities.Carga;
+import entities.Cliente;
+import entities.Direccion;
+import entities.Empresa;
+import entities.Envio;
+import entities.Factura;
+import entities.Habilitado;
+import entities.Particular;
+import entities.Pedido;
+import entities.PlanDeMantenimiento;
+import entities.PrecioVehiculo;
+import entities.Producto;
+import entities.Proveedor;
+import entities.Remito;
+import entities.Ruta;
+import entities.Seguro;
+import entities.Sucursal;
+import entities.Transporte;
+import entities.Trayecto;
+import entities.Vehiculo;
+import entities.Viaje;
 
 public class HibernateUtil {
 
 	private static final SessionFactory sessionFactory;
-	
+
 	static {
-		
+
 		try {
 			AnnotationConfiguration config = new AnnotationConfiguration();
 			config.addAnnotatedClass(Carga.class);
@@ -38,17 +58,17 @@ public class HibernateUtil {
 			config.addAnnotatedClass(Viaje.class);
 			sessionFactory = config.buildSessionFactory();
 		}
-		
-		catch(Throwable e) {
+
+		catch (Throwable e) {
 			System.err.println("Initial SessionFactory creation failed." + e);
 			throw new ExceptionInInitializerError(e);
 		}
 	}
-	
+
 	public static Session getSession() throws HibernateException {
 		return sessionFactory.openSession();
 	}
-	
+
 	public static SessionFactory getSessionfactory() {
 		return sessionFactory;
 	}

@@ -2,10 +2,10 @@ package hbt;
 
 import java.io.Serializable;
 
-import javax.persistence.*;
+import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public class PersistentObject implements Serializable{
+public class PersistentObject implements Serializable {
 	/**
 	 * 
 	 */
