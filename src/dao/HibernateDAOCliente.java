@@ -26,6 +26,21 @@ public class HibernateDAOCliente extends HibernateDAO {
 		return instancia;
 	}
 
+	@SuppressWarnings("unchecked")
+	public List<ClienteDTO> obtenerClientes() {
+		List<ClienteDTO> clientesDTO = new ArrayList<ClienteDTO>();
+		try {
+			List<Cliente> clientes = sessionFactory.openSession().createQuery("FROM Cliente").list();
+			for (Cliente c : clientes) {
+				clientesDTO.add(c.toDTO());
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		this.closeSession();
+		return clientesDTO;
+	}
+	
 	public ClienteDTO obtenerClientePorDNI(int dni) {
 
 		ClienteDTO dto = new ClienteDTO();
@@ -43,21 +58,6 @@ public class HibernateDAOCliente extends HibernateDAO {
 		Cliente cliente = (Cliente) sessionFactory.openSession().createQuery("FROM Cliente c where c.id=:id")
 				.setParameter("id", dni).uniqueResult(); 
 		return cliente;
-	}
-
-	@SuppressWarnings("unchecked")
-	public List<ClienteDTO> obtenerClientes() {
-		List<ClienteDTO> clientesDTO = new ArrayList<ClienteDTO>();
-		try {
-			List<Cliente> clientes = sessionFactory.openSession().createQuery("FROM Cliente").list();
-			for (Cliente c : clientes) {
-				clientesDTO.add(c.toDTO());
-			}
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-		this.closeSession();
-		return clientesDTO;
 	}
 
 	public ClienteDTO obtenerClientePorID(int id) {
