@@ -3,6 +3,9 @@ package rmi;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
+import java.util.List;
+
+import dto.VehiculoDTO;
 
 public class MainServer extends RmiStarter {
 
@@ -24,9 +27,12 @@ public class MainServer extends RmiStarter {
 			System.out.println("Fijado en remoteInterfaceCliente");
 			
 			RemoteObjectProveedor remoteObjectProveedor = new RemoteObjectProveedor();
-//			LocateRegistry.createRegistry(1098);
 			Naming.rebind("remoteInterfaceProveedor", remoteObjectProveedor);
 			System.out.println("Fijado en remoteInterfaceProveedor");
+			
+			RemoteInterfaceVehiculo remoteInterfaceVehiculo = new RemoteObjectVehiculo();
+			Naming.rebind("remoteInterfaceProveedor", remoteInterfaceVehiculo);
+			System.out.println("Fijado en remoteInterfaceVehiculo");
 
 		} catch (Exception e) {
 
