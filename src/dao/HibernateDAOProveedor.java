@@ -48,7 +48,7 @@ public class HibernateDAOProveedor extends HibernateDAO {
 	}
 	
 	private Proveedor obtenerProveedorEntityPorId(int id) {
-		Proveedor proveedor = (Proveedor) sessionFactory.openSession().createQuery("FROM Cliente c where c.id=:id")
+		Proveedor proveedor = (Proveedor) sessionFactory.openSession().createQuery("FROM Proveedor p where p.id=:id")
 				.setParameter("id", id).uniqueResult(); 
 		return proveedor;
 	}
