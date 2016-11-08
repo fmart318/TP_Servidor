@@ -4,11 +4,8 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
-import dao.HibernateDAOCliente;
 import dao.HibernateDAOProveedor;
-import dto.ClienteDTO;
 import dto.ProveedorDTO;
-import entities.Cliente;
 import entities.Proveedor;
 
 public class RemoteObjectProveedor extends UnicastRemoteObject implements RemoteInterfaceProveedor {
@@ -23,13 +20,11 @@ public class RemoteObjectProveedor extends UnicastRemoteObject implements Remote
 
 
 	public List<ProveedorDTO> obtenerProveedores() throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+		return hbtDAOProveedor.obtenerProveedores();
 	}
 
 	public ProveedorDTO obtenerProveedor(int idProveedor) throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+		return hbtDAOProveedor.obtenerProveedorPorId(idProveedor);
 	}
 
 	public void altaProveedor(ProveedorDTO proveedorDTO) throws RemoteException {
@@ -43,15 +38,13 @@ public class RemoteObjectProveedor extends UnicastRemoteObject implements Remote
 				proveedorDTO.getCompania(), proveedorDTO.getTipoMercaderia());
 	}
 
-
 	public void eliminarProveedor(int idProveedor) throws RemoteException {
-		// TODO Auto-generated method stub
-		
+		hbtDAOProveedor.eliminarProveedor(idProveedor);
 	}
 
 	public void modificarProveedor(ProveedorDTO nuevoProveedor) throws RemoteException {
-		// TODO Auto-generated method stub
-		
+		hbtDAOProveedor.modificar(new Proveedor(nuevoProveedor.getIdProveedor(), nuevoProveedor.getCompania(), 
+				nuevoProveedor.getTipoMercaderia()));
 	}
 
 }
