@@ -1,10 +1,12 @@
 package dao;
 
+import hbt.HibernateUtil;
+
+import java.util.ArrayList;
 import java.util.List;
 
-import dto.ClienteDTO;
 import dto.VehiculoDTO;
-import hbt.HibernateUtil;
+import entities.Vehiculo;
 
 public class HibernateDAOVehiculo extends HibernateDAO {
 
@@ -18,13 +20,34 @@ public class HibernateDAOVehiculo extends HibernateDAO {
 		return instancia;
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<VehiculoDTO> obtenerVehiculos() {
-		// TODO Auto-generated method stub
-		return null;
+		List<VehiculoDTO> vehiculosDTO = new ArrayList<VehiculoDTO>();
+		try {
+			List<Vehiculo> vehiculos = sessionFactory.openSession().createQuery("FROM Vehiculo").list();
+			for (Vehiculo vehiculo : vehiculos) {
+				vehiculosDTO.add(vehiculo.toDTO());
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		this.closeSession();
+		return vehiculosDTO;
 	}
 
-	public ClienteDTO obtenerVehiculoePorID(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public VehiculoDTO obtenerVehiculoPorId(int id) {
+		VehiculoDTO vehiculoDTO = new VehiculoDTO();
+		try {
+			Vehiculo vehiculo = (Vehiculo) sessionFactory.openSession()
+					.createQuery("FROM Vehiculo v where v.id = :vehiculo")
+					.setParameter("vehiculo", id).uniqueResult();
+
+			vehiculoDTO = vehiculo.toDTO();
+			this.closeSession();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		this.closeSession();
+		return vehiculoDTO;
 	}
 }
