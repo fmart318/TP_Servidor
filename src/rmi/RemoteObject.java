@@ -7,10 +7,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import strategy.PoliticaEspecificidad;
-import strategy.PoliticaGarantia;
-import strategy.PoliticaGeneral;
-import strategy.PoliticaMantenimiento;
+import Strategy.PoliticaEspecificidad;
+import Strategy.PoliticaGarantia;
+import Strategy.PoliticaGeneral;
+import Strategy.PoliticaMantenimiento;
 import dao.HibernateDAO;
 import dto.CargaDTO;
 import dto.ClienteDTO;
