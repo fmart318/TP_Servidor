@@ -10,7 +10,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import dto.CargaDTO;
-import dto.ClienteDTO;
 import dto.EnvioDTO;
 import dto.HabilitadoDTO;
 import dto.PedidoDTO;
@@ -113,16 +112,6 @@ public class HibernateDAO {
 		return 0;
 	}
 
-	public List<ViajeDTO> obtenerViajesDeCliente(int idCliente) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Object obtenerClienteParticular(int dNI) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	public List<VehiculoDTO> obtenerVehiculos() {
 		// TODO Auto-generated method stub
 		return null;
@@ -138,10 +127,6 @@ public class HibernateDAO {
 		return null;
 	}
 
-	public List<PedidoDTO> obtenerPedidosDeCliente(int idCliente) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	public void updateViaje(Viaje viajeToEntity) {
 		// TODO Auto-generated method stub
@@ -189,11 +174,6 @@ public class HibernateDAO {
 		return null;
 	}
 
-	public List<ClienteDTO> obtenerClientes() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	public List<CargaDTO> obtenerCargasDeUnPedido(PedidoDTO pedido) {
 		// TODO Auto-generated method stub
 		return null;
@@ -233,10 +213,4 @@ public class HibernateDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	public ClienteDTO obtenerClientePorID(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }
