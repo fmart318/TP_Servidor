@@ -4,8 +4,6 @@ import java.util.List;
 
 import dao.HibernateDAO;
 import dto.*;
- 
- 
 
 public class Controlador {
 
