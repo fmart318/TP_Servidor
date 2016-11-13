@@ -35,6 +35,14 @@ public class Cliente extends PersistentObject {
 		this.idCliente = idCliente;
 		this.nombre = nombre;
 	}
+	
+	public int getIdCliente() {
+		return idCliente;
+	}
+
+	public void setIdCliente(int idCliente) {
+		this.idCliente = idCliente;
+	}
 
 	public String getNombre() {
 		return nombre;

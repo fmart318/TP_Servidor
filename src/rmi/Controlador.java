@@ -30,7 +30,7 @@ public class Controlador {
 		{
 			if(v.getEstado().equals("En Deposito"))
 			{
-				rmO.ControlarVehiculo(v);
+				rmO.controlarMantenimientoVehiculo(v);
 			}
 		}
 		
