@@ -18,8 +18,6 @@ import dto.SeguroDTO;
 import dto.SucursalDTO;
 import dto.TransporteDTO;
 import dto.VehiculoDTO;
-import dto.ViajeDTO;
-import entities.Viaje;
 
 public class HibernateDAO {
 
@@ -107,11 +105,6 @@ public class HibernateDAO {
 		return null;
 	}
 
-	public float seleccionarViaje(int idViaje) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 	public List<VehiculoDTO> obtenerVehiculos() {
 		// TODO Auto-generated method stub
 		return null;
@@ -122,38 +115,12 @@ public class HibernateDAO {
 		return null;
 	}
 
-	public ViajeDTO obtenerViajePorVehiculo(VehiculoDTO vehiculo) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	public void updateViaje(Viaje viajeToEntity) {
-		// TODO Auto-generated method stub
-
-	}
-
 	public VehiculoDTO obtenerVehiculo(int idVehiculo) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public ViajeDTO obtenerViaje(int idViaje) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public List<ViajeDTO> obtenerViajesDePedidos(List<PedidoDTO> pedidosDTO) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	public List<RutaDTO> obtenerRutas() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public List<ViajeDTO> obtenerViajes() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -185,11 +152,6 @@ public class HibernateDAO {
 	}
 
 	public EnvioDTO obtenerEnvioDePedido(int idPedido) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public ViajeDTO obtenerViajeDeEnvio(int idEnvio) {
 		// TODO Auto-generated method stub
 		return null;
 	}
